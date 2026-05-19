@@ -77,7 +77,7 @@ values
 	('Estabilizadores e No Breaks',24),
 	('Armazenamento',24);
 insert into produtos
-    (pronome,prodescricao,provalorcusto,provalorvenda,proquantidade,prosubid,)
+    (pronome,prodescricao,provalorcusto,provalorvenda,proquantidade,prosubid)
 values
     ('3 Câmera Automotiva Veicular Carro Hd Noturna 1080p Icarbonx','Resolução de vídeo de 1080p para imagens nítidas. Armazenamento expansível de até 128GB com cartão SD. Ângulo de visão de 180° para cobertura ampla. Tela de 2 polegadas para visualização conveniente. Gravação em loop para uso contínuo sem interrupções. Conectividade Wi-Fi com alcance de até 10 metros.',50.50,99.90,10,1),
     ('Tapete Emborrachado Carro Personalizado Jogo 5 Peças Fiat','Jogo Tapete Automotivo Personalizado de Borracha Macio e Impermeável Kit 5 Peças + Lixeira para Carros Eleve o interior do seu carro para um outro nível com nosso exclusivo Jogo de Tapetes Automotivos. Desenvolvido e personalizado para modelos Fiat, este kit de 5 peças, acompanhado por uma prática lixeira, combina o conforto do tapete macio com a durabilidade do material de borracha. A base impermeável oferece segurança e durabilidade para o carpete do veículo, garantindo um visual de luxo e versátilidade para o interior do seu carro. Características: Personalizado com Logo e Nome da Montadora Solado no Tapete do Motorista Borracha de Alta Qualidade Material Macio e Maleável Base Antiderrapante Espessura 4mm Impermeável Sem odor Atenção: Todos os nossos produtos possuem fotos reais, sendo assim você receberá exatamente o produto que é oferecido nas imagens.',37,73.9,10,1),
