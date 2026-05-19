@@ -22,21 +22,27 @@ select
     subnome,
     subcatid,
     catnome,
+    fotcaminho,
     proativo
 from
     produtos,
     subcategorias,
-    categorias
+    categorias,
+    fotosproduto
 where
     prosubid = subid
 and
     subcatid = catid
+and 
+    fotproid = proid
+and
+    fotprincipal = 1
 ";
 $prppro = $pdo->prepare($sqlpro);
 $prppro->execute();
-while($dspro = $prppro->fetch(PDO::FETCH_ASSOC)){
+/*while($dspro = $prppro->fetch(PDO::FETCH_ASSOC)){
   echo $dspro['pronome'].'<br>';
-}
+}*/
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -136,20 +142,20 @@ while($dspro = $prppro->fetch(PDO::FETCH_ASSOC)){
       </button>
     </div>
     <div class="row">
-      <?php while($i<=10){ ?>
+      <?php while($dspro = $prppro->fetch(PDO::FETCH_ASSOC)){ ?>
       <div class="col mt-2">
         <div class="card" style="width: 18rem;">
-          <img src="<?php echo $imagem; ?>" class="card-img-top" alt="...">
+          <img src="<?php echo $dspro['fotcaminho'];?>" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title"><?php echo $titulo; ?></h5>
-            <p class="card-text"><?php echo $resumo; ?></p>
-            <p class="text-danger">Valor:<b>R$ <?php echo $valor; ?></b></p>
-            <p class="text-primary">Estoque: <?php echo $quantidade; ?></p>
+            <h5 class="card-title"><?php echo mb_strimwidth($dspro['pronome'],0,60,"..."); ?></h5>
+            <p class="card-text"><?php echo mb_strimwidth($dspro['prodescricao'],0,130,"..."); ?></p>
+            <p class="text-danger">Valor:<b>R$ <?php echo $dspro['provalorvenda']; ?></b></p>
+            <p class="text-primary">Estoque: <?php echo $dspro['proquantidade']; ?></p>
             <a href="#" class="btn btn-primary">Ver Produto</a>
           </div>
         </div>
       </div>
-      <?php $i++; }//$i=$i+1?>
+      <?php }?>
     </div>
   </main>
 
